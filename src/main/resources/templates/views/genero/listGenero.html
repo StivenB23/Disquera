@@ -1,0 +1,57 @@
+<!doctype html>
+<html xmlns:th="https://www.thymeleaf.org" lang="es">
+  <head>
+    <title>Lista Canciones</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.0.2 -->
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">    
+    <link rel="icon" href="../cancion.png">
+    <!-- Iconos de Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" th:href="@{/assets/css/style.css}">
+    <!-- Sweet alert -->
+    <link rel="stylesheet" th:href="@{sweetalert2.min.css}">
+  </head>
+  <body class="container--genero">
+    <div class="container">
+        <h1 class="text-center" >GENERO <img th:src="@{/assets/img/img_copy.png}" width="100" alt=""></h1>
+        <a href="../index" class="bi bi-house-door-fill btn__home" title="regresar al home"></a>
+        <a href="formGenero" class="bi bi-plus-square-fill btn__add" title="Añadir nueva canción" ></a>
+        <table class="table shadow regular">
+            <thead class="table encabezado text-center">
+                <tr>
+                    <th>ID</th>
+                    <th>NOMBRE GENERO</th>
+                    <th>ESTADO</th>
+                    <th colspan="3">ACCIONES</th>
+                </tr>
+            </thead>
+            <tbody class="text-center">
+                <tr  th:if="${generos.size()>0}" th:each="g:${generos}">
+                    <td th:text="${g.idGenero}"></td>
+                    <td th:text="${g.nombreGenero}"></td>
+                    <td th:if="${g.estadoGenero == true}">Activo</td>
+                    <td th:if="${g.estadoGenero == False}">Inactivo</td>
+                    <td>          
+                        <a th:href="@{/genero/ver/}+${g.idGenero}" class="btn btn-edit bi bi-pencil-square"></a>
+                    </td>
+                    <td>
+                            <a id="iconoEliminar"  th:onclick="|eliminarGenero('${g.idGenero}')|"  ><i class="bi bi-trash-fill btn-delete"></i></a>
+                            <!-- <a id="iconoEliminar" th:onclick="|eliminarGenero('${g.idGenero}')|" th:href="@{/genero/delete/}+${g.idGenero}"><i class="bi bi-trash-fill btn-delete"></i></a> -->
+                 
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script th:src="@{sweetalert2.all.min.js}"></script>
+    <script th:src="@{//cdn.jsdelivr.net/npm/sweetalert2@11}"></script>
+    <script type="text/javascript" th:src="@{/assets/js/script.js}"></script>
+    <!-- JavaScript Bundle with Popper -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proyecto Disquera</title>
+    <link rel="stylesheet" th:href="@{./assets/css/style.css}" />
+    <link rel="icon" th:href="@{./assets/img/Genero.png}">
+  </head>
+  <body>
+    <main class="contenedor">
+      <div class="cancion">
+        <header>
+          <img th:src="@{./assets/img/img_copy.png}" width="100" alt="">
+        </header>
+        <div class="cancion__elementos">
+          <h1 class="titulo titulo--cancion">CANCIÓN</h1>
+          <img
+            class="elemento__img cancion__img--cancion" th:src="@{./assets/img/cancion.png}"alt="" />
+          <div class="cancion__links">
+            <a class="link__item link__item--cancion" href="cancion/formCancion"
+              >Añadir Canción</a>
+            <a class="link__item link__item--cancion" href="cancion/listCancion"
+              >Lista Canciones</a>
+          </div>
+        </div>
+      </div>
+      <div class="genero">
+        <h1 class="titulo titulo--genero">GENERO</h1>
+        <div class="genero__elementos">
+            <img class="elemento__img cancion__img--genero" th:src="@{./assets/img/Genero.png}" alt="">
+            <div class="genero__links">
+                <a class="link__item--genero" href="genero/listGenero">Lista Generos</a>
+                <a class="link__item--genero" href="genero/formGenero">Añadir Genero</a>
+            </div>
+        </div>   
+      </div>
+      <div class="album">
+        <h1 class="titulo titulo--album">ALBUM</h1>
+        <div class="album__elementos">
+          <div class="album__links">
+            <a class="link__item--album" href="album/formAlbum">Añadir Album</a>
+            <a class="link__item--album" href="album/listAlbum">Lista Albums</a>
+          </div>
+          <img class="album__img--album" src="./assets/img/Album.png" alt="" width="200" />
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="">Los datos registrados fueron</h1>
+    <!-- <p th:if="${canciones.size>0}">good</p> -->
+    <p th:text="${cancion.nombreCancion }"></p>
+    <p th:text="${cancion.fecha }"></p>
+    <p th:text="${cancion.duracion }"></p>
+    <p th:text="${cancion.estadoCancion }"></p>
+</body>
+</html>
